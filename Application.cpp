@@ -1,50 +1,128 @@
 ﻿#include <stdio.h>
-#include <stdarg.h>
+#include <string.h>
 
-#pragma region 가변 인수
-    // 인수의 개수가 정해지지 않은 인수.
-
-void Function(int x, ...)
-{
-    // 1. va_list
-    // 각 가변 인자의 시작 주소를
-    // 가리킬 수 있는 포인터
-    va_list ptr;
-
-
-    // 2. va_start
-    // va_list로 만들어진 포인터에게 고정 인자의 
-    // 주소를 가르쳐주어 va_list의 값을 초기화 시켜줌
-    va_start(ptr, x);
-
-    // 3. va_arg
-    // va_list에 저장된 var_type 값을 검색해 반환하고,
-    // va_list에서 다음 인수를 가리키도록 va_list의 주소를
-    // 이동시켜 다음 인수가 시작되는 위치를 변경
-
-    printf("%d ", x);
-
-    for (int i = 0; i < x; i++)
-    {
-        printf("%d ", va_arg(ptr, int));
-    }
-    printf("\n");
-
-    // 4. va_end
-    // va_list인 값을 NULL로 초기화한다.
-    va_end(ptr);
-}
-
+#pragma region 함수 포인터
+    // 함수의 주소값을 저장하고 가리킬 수 있는 변수
+    
+//  void Delegate()
+//  {
+//      printf("대리자~");
+//  }
+//  
+//  int Add(int x, int y)
+//  {
+//      return x + y;
+//  }
+//  
+//  int Substract(int x, int y)
+//  {
+//      return x - y;
+//  }
+//  
+//  int Multiple(int x, int y)
+//  {
+//      return x * y;
+//  }
+//  
+//  int Divide(int x, int y)
+//  {
+//      return x / y;
+//  }
+//  
+//  void Calculator(int x, int y, int (*cptr) (int, int))
+//  {
+//      printf("cptr 함수의 결과 : %d\n", cptr(x, y));
+//  }
 #pragma endregion
+
 
 int main()
 {
-    Function(4, 2, 3, 4, 5);
-    Function(2, 10, 20);
-    Function(5, 100, 200, 300, 400, 500);
+#pragma region 함수 포인터
 
-    // Function(10, 20, 30, 40, 50);
-    // printf("%d, %d, %d, %d", 10, 20, 30, 40);
+    // 함수 포인터는 함수의 반환형과 매개 변수의 타입이 일치해야 하며,
+    // 함수 포인터를 사용하여 동적으로 메모리를 할당할 수 없습니다.
+
+    //  void (*fptr) ();
+    //  int (*cptr) (int, int);
+
+    //  Calculator(10, 20, Add);
+    //  Calculator(10, 20, Substract);
+    //  Calculator(10, 20, Multiple);
+    //  Calculator(20, 20, Divide);
+
+    //  cptr = Add;
+    //  printf("cptr 함수의 결과 : %d\n", cptr(10, 20));
+    //  cptr = Substract;
+    //  printf("cptr 함수의 결과 : %d\n", cptr(10, 20));
+    //  cptr = Multiple;
+    //  printf("cptr 함수의 결과 : %d\n", cptr(10, 20));
+    //  cptr = Divide;
+    //  printf("cptr 함수의 결과 : %d\n", cptr(20, 20));
+
+
+    //  fptr = Delegate;
+
+    //  fptr();
+
+#pragma endregion
+
+#pragma region 소수 판별 알고리즘
+    //  int number = 0;
+    //  int count = 0;
+    //  
+    //  printf("정수 입력 : ");
+    //  scanf_s("%d", &number);
+    //  
+    //  for (int i = 2; i < number; i++)
+    //  {            
+    //      if ( number % i == 0 )
+    //      {
+    //          count++;
+    //      }
+    //  }
+    //  if (count == 1)
+    //  {
+    //      printf("소수입니다!");
+    //  }
+    //  else
+    //  {
+    //      printf("소수가 아닙니다!");
+    //  }
+#pragma endregion
+
+#pragma region 회문 판별 알고리즘
+    //  const char* content = "Level";
+    //  printf("%d", strlen(content));
+
+    int flag = 0;
+
+    const char * a = "aadda";
+
+    int size = strlen(a);
+
+    for (int i = 0; i < size / 2; i++) 
+    {
+        if (a[1] == a[size - 1 - i])
+        {
+            flag = 1;
+        }
+        else
+        {
+            flag = 0;
+            break;
+        }
+    }
+    if (flag == 1)
+    {
+        printf("회문입니다!");
+    }
+    else
+    {
+        printf("회문이 아닙니다!");
+    }
+#pragma endregion
+
 
     return 0;
 }
