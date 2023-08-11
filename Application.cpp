@@ -1,128 +1,61 @@
 ﻿#include <stdio.h>
-#include <string.h>
-
-#pragma region 함수 포인터
-    // 함수의 주소값을 저장하고 가리킬 수 있는 변수
-    
-//  void Delegate()
-//  {
-//      printf("대리자~");
-//  }
-//  
-//  int Add(int x, int y)
-//  {
-//      return x + y;
-//  }
-//  
-//  int Substract(int x, int y)
-//  {
-//      return x - y;
-//  }
-//  
-//  int Multiple(int x, int y)
-//  {
-//      return x * y;
-//  }
-//  
-//  int Divide(int x, int y)
-//  {
-//      return x / y;
-//  }
-//  
-//  void Calculator(int x, int y, int (*cptr) (int, int))
-//  {
-//      printf("cptr 함수의 결과 : %d\n", cptr(x, y));
-//  }
-#pragma endregion
-
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
-#pragma region 함수 포인터
+#pragma region 랜덤 함수
+    // 0 ~ 32767 사이의 난수 값을 반환하는 함수.
+    
+    //  int seed = rand();
+    //  srand(time(NULL));
 
-    // 함수 포인터는 함수의 반환형과 매개 변수의 타입이 일치해야 하며,
-    // 함수 포인터를 사용하여 동적으로 메모리를 할당할 수 없습니다.
-
-    //  void (*fptr) ();
-    //  int (*cptr) (int, int);
-
-    //  Calculator(10, 20, Add);
-    //  Calculator(10, 20, Substract);
-    //  Calculator(10, 20, Multiple);
-    //  Calculator(20, 20, Divide);
-
-    //  cptr = Add;
-    //  printf("cptr 함수의 결과 : %d\n", cptr(10, 20));
-    //  cptr = Substract;
-    //  printf("cptr 함수의 결과 : %d\n", cptr(10, 20));
-    //  cptr = Multiple;
-    //  printf("cptr 함수의 결과 : %d\n", cptr(10, 20));
-    //  cptr = Divide;
-    //  printf("cptr 함수의 결과 : %d\n", cptr(20, 20));
-
-
-    //  fptr = Delegate;
-
-    //  fptr();
+    //  for (int i = 0; i < 10; i++)
+    //  {
+    //      seed = rand() % 10 + 1;
+    //      printf("seed의 값 : %d\n", seed);
+    //  }
 
 #pragma endregion
 
-#pragma region 소수 판별 알고리즘
-    //  int number = 0;
-    //  int count = 0;
-    //  
-    //  printf("정수 입력 : ");
-    //  scanf_s("%d", &number);
-    //  
-    //  for (int i = 2; i < number; i++)
-    //  {            
-    //      if ( number % i == 0 )
-    //      {
-    //          count++;
-    //      }
-    //  }
-    //  if (count == 1)
-    //  {
-    //      printf("소수입니다!");
-    //  }
-    //  else
-    //  {
-    //      printf("소수가 아닙니다!");
-    //  }
-#pragma endregion
+#pragma region 업 다운 게임
 
-#pragma region 회문 판별 알고리즘
-    //  const char* content = "Level";
-    //  printf("%d", strlen(content));
+    int a; // 컴퓨터 숫자
+    int count = 0;
+    int point = 5;
+    int num;
+    a = rand() % 50 + 1;
 
-    int flag = 0;
 
-    const char * a = "aadda";
-
-    int size = strlen(a);
-
-    for (int i = 0; i < size / 2; i++) 
+    printf("1~50까지의 숫자를 맞추시오\n");
+   
+    while (count < point)
     {
-        if (a[1] == a[size - 1 - i])
+        printf("숫자를 입력해주세요\n");
+        scanf_s("%d", &num);
+        if (num == a)
         {
-            flag = 1;
-        }
-        else
-        {
-            flag = 0;
+            printf("정답입니다!\n");
             break;
+            return;
+        }
+        else if (num > a)
+        {
+            count++;
+            printf("랜덤숫자보다 큽니다!\n");
+        }
+        else if (num < a)
+        {
+            count++;
+            printf("랜덤숫자보다 작습니다!\n");
         }
     }
-    if (flag == 1)
+    if (count == point)
     {
-        printf("회문입니다!");
+        printf("죽었습니다.");
     }
-    else
-    {
-        printf("회문이 아닙니다!");
-    }
-#pragma endregion
 
+#pragma endregion
 
     return 0;
 }
