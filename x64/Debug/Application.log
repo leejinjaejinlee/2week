@@ -1,3 +1,4 @@
 ﻿  Application.cpp
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(40,13): error C2561: 'main': 함수는 값을 반환해야 합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(5): message : 'main' 선언을 참조하십시오.
+C:\Users\Administrator\Desktop\2week\Application.cpp(14,20): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\Administrator\Desktop\2week\Application.cpp(14,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  Application.vcxproj -> C:\Users\Administrator\Desktop\2week\x64\Debug\Application.exe

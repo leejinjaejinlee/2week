@@ -1,61 +1,74 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+﻿#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<windows.h>
+#define UP 72
+#define LEFT 75
+#define RIGHT 77
+#define DOWN 80
 
+
+void gotoXY(int x, int y)
+{
+	// x, y 좌표 설정
+	COORD position = {x, y};
+
+	// 커서 이동
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
+}
 int main()
 {
-#pragma region 랜덤 함수
-    // 0 ~ 32767 사이의 난수 값을 반환하는 함수.
-    
-    //  int seed = rand();
-    //  srand(time(NULL));
+#pragma region _kbhit() 함수
+	
+	//	char key = 0;
+	//	int x = 5;
+	//	int y = 5;
+	//	
+	//	// Update()
+	//	while (1)
+	//	{
+	//		gotoXY(x, y);
+	//		printf("★ ");
+	//		if(_kbhit()) // 키보드 입력을 확인하는 함수
+	//		{
+	//			key = _getch();
+	//	
+	//			if (key == -32)
+	//			{
+	//				key = _getch();
+	//			}
+	//	
+	//			switch (key)
+	//			{
+	//			case UP: if (y <= 0) break;
+	//				y--;
+	//				break;
+	//			case LEFT: if (x <= 0) break;
+	//				x--;
+	//				break;
+	//			case RIGHT: x++;
+	//				break;
+	//			case DOWN: y++;
+	//				break;
+	//			}
+	//			system("cls");		// 스크린을 지우는 함수
+	//		}		
+	//	
+	//		// gotoXY(20, 10);
+	//		// printf("게임 중...\n");
+	//	
+	//		// Sleep : 1/1000의 1로 계산되며,
+	//		// Sleep(1000);
+	//	}
 
-    //  for (int i = 0; i < 10; i++)
-    //  {
-    //      seed = rand() % 10 + 1;
-    //      printf("seed의 값 : %d\n", seed);
-    //  }
-
-#pragma endregion
-
-#pragma region 업 다운 게임
-
-    int a; // 컴퓨터 숫자
-    int count = 0;
-    int point = 5;
-    int num;
-    a = rand() % 50 + 1;
-
-
-    printf("1~50까지의 숫자를 맞추시오\n");
-   
-    while (count < point)
-    {
-        printf("숫자를 입력해주세요\n");
-        scanf_s("%d", &num);
-        if (num == a)
-        {
-            printf("정답입니다!\n");
-            break;
-            return;
-        }
-        else if (num > a)
-        {
-            count++;
-            printf("랜덤숫자보다 큽니다!\n");
-        }
-        else if (num < a)
-        {
-            count++;
-            printf("랜덤숫자보다 작습니다!\n");
-        }
-    }
-    if (count == point)
-    {
-        printf("죽었습니다.");
-    }
 
 #pragma endregion
 
-    return 0;
+#pragma region 
+
+#pragma endregion
+
+	// LNK1036 링킹
+
+	return 0;
 }
