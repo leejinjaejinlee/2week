@@ -1,4 +1,2 @@
 ﻿  Application.cpp
-C:\Users\Administrator\Desktop\2week\Application.cpp(14,20): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\Administrator\Desktop\2week\Application.cpp(14,23): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
   Application.vcxproj -> C:\Users\Administrator\Desktop\2week\x64\Debug\Application.exe
