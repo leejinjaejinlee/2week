@@ -1,9 +1,14 @@
 ﻿  Application.cpp
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(41,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(41,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(44,34): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(44,46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(108,27): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(108,30): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(121,2): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Application.vcxproj -> C:\Users\이진재\OneDrive\바탕 화면\2week\x64\Debug\Application.exe
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(27,21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(27,24): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(56,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(123,34): error C2440: '초기화 중': 'int'에서 'const char *'(으)로 변환할 수 없습니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(123,24): message : 정수 계열 형식에서 포인터 형식으로 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 괄호가 있는 함수 스타일 캐스트가 필요합니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(123,28): error C2078: 이니셜라이저가 너무 많습니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(136,37): error C2039: 'y': 'Player'의 멤버가 아닙니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(12): message : 'Player' 선언을 참조하십시오.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(144,27): error C2039: 'y': 'Player'의 멤버가 아닙니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(12): message : 'Player' 선언을 참조하십시오.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(144,28): error C2660: 'gotoXY': 함수는 1개의 인수를 사용하지 않습니다.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(24,6): message : 'gotoXY' 선언을 참조하십시오.
+C:\Users\이진재\OneDrive\바탕 화면\2week\Application.cpp(148,4): error C2146: 구문 오류: ';'이(가) 'system' 식별자 앞에 없습니다.
