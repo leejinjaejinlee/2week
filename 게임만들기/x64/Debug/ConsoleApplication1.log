@@ -1,0 +1,23 @@
+﻿  4424132.cpp
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(65,25): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(65,25): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(67,25): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(67,25): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(69,20): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(69,20): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(71,20): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\4424132.cpp(71,20): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  Source.cpp
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(42,25): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(42,25): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(44,25): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(44,25): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(46,20): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(46,20): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(48,20): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(48,20): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(83,14): error C2143: syntax error: missing ';' before ')'
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(84,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(84,1): error C2143: syntax error: missing ')' before '}'
+C:\Users\Administrator\Desktop\ConsoleApplication1\Source.cpp(84,1): error C2059: syntax error: '}'
+  Generating Code...
