@@ -5,11 +5,12 @@
 #include<string>
 #include<ctime>
 #pragma comment(lib, "winmm.lib")
+
 using namespace std;
 
 #define MAGIC_KEY 224
 #define SPACE 32
-#define KEY_NUM 4
+#define KEY_NUM 3
 #define LIFE 3
 #define MAX_LEVEL 11
 
@@ -44,45 +45,89 @@ void SetConsoleView()
 void DrawReadyGame()
 {
     system("cls");
-    gotoxy(5, 2);
-    printf("******************************");
     gotoxy(5, 3);
-    printf("*        Dance Dance         *");
-    gotoxy(5, 4);
-    printf("******************************");
-    gotoxy(10, 8);
-    printf("게임 시작");
+    cout << "******************************";
+    gotoxy(5, 4); 
+    cout << "*     화살표 맞추기 게임     *";
+    gotoxy(5, 5);
+    cout << "******************************";
     gotoxy(10, 9);
-    printf("끝내기\n");
+    cout << "게임 시작";
+    gotoxy(10, 10);
+    cout << "끝내기" << endl;
+    gotoxy(8, 14);
+    cout << "SPACE를 누르세요!" << endl;
 }
 
 void DrawStartGame(const int life, const int score, const string questionStr, const string answerStr)
 {
     system("cls");
     gotoxy(2, 1);
-    printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
+    cout << "□□□□□□□□□□□□□□□□□□□□";
     gotoxy(4, 3);
-    printf("목숨 : ", life);
+    cout << "목숨 : " << life;
     gotoxy(4, 4);
-    printf("점수 : ", score);
+    cout << "점수 : " << score;
     gotoxy(4, 8);
-    printf("Q : ", questionStr);
+    cout << "Q : " << questionStr;
     gotoxy(4, 10);
-    printf("A : ", answerStr);
-    gotoxy(4, 12);
-    printf("SPACE를 누르세요!");
+    cout << "A : " << answerStr;
+    gotoxy(4, 14);
+    cout << "SPACE를 누르세요!";
     gotoxy(2, 18);
-    printf("□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□");
+    cout << "□□□□□□□□□□□□□□□□□□□□";
 }
 
-void DrawGameOver(const int playTime)
+void DrawGameOver(const int score)
 {
+    system("cls");
     gotoxy(8, 8);
-    printf("-------------------");
+    cout << "-------------------";
     gotoxy(8, 9);
-    printf("| G A M E O V E R |");
+    cout << "| G A M E O V E R |";
     gotoxy(8, 10);
-    printf("-------------------");
+    cout << "-------------------";
+    gotoxy(10, 12);
+    cout << " 점수 : " << score;
+    gotoxy(8, 15);
+    if (score <= 50)
+    {
+        
+        cout << "      아이언";
+    }
+    else if (50 < score && score <= 100)
+    {
+        cout << "      브론즈";
+    }
+    else if (100 < score && score <= 150)
+    {
+        cout << "        실버";  
+    }
+    else if (150 < score && score <= 200)
+    {
+        cout << "        골드";
+    }
+    else if (200 < score && score <= 300)
+    {
+        cout << "      플래티넘";
+    }
+    else if (300 < score && score <= 600)
+    {
+        cout << "      다이아";
+    }
+    else if (600 < score && score <= 800)
+    {
+        cout << "      마스터";
+    }
+    else if (800 < score && score <= 1000)
+    {
+        cout << "    그랜드마스터";
+    }
+    else if (1000 < score)
+    {
+        cout << "     ★챌린저★";
+    }
+    
     system("pause>null");
 }
 
@@ -92,13 +137,13 @@ void DrawUserCursor(int& y)
     {
         y = 0;
     }
-    else if (y >= 2)
+    else if (y >= 1)
     {
-        y = 2;
+        y = 1;
     }
 
-    gotoxy(9, 8 + y);
-    printf(">\n");
+    gotoxy(9, 8 + y + 1);
+    cout << ">" << endl;
 }
 
 MENU ReadyGame()
@@ -231,13 +276,10 @@ void StartGame()
 
             if (life == 0)
             {
-                endTime = clock();
-                int playTime = static_cast<int>((endTime - startTime) / CLOCKS_PER_SEC);
-
-                DrawGameOver(playTime);
-                PlaySound(NULL, NULL, 0);
+                DrawGameOver(score);
                 return;
             }
+
             firstInput = _getch();
             if (firstInput == MAGIC_KEY)
             {
@@ -274,7 +316,6 @@ void StartGame()
                         score = 0;
                     }
                 }
-
                 questionVec.clear();
                 questionStr = "";
                 answerVec.clear();
