@@ -3,7 +3,6 @@
 #include<conio.h>
 #include<vector>
 #include<string>
-#include<ctime>
 #pragma comment(lib, "winmm.lib")
 
 using namespace std;
@@ -59,15 +58,17 @@ void DrawReadyGame()
     cout << "SPACE를 누르세요!" << endl;
 }
 
-void DrawStartGame(const int life, const int score, const string questionStr, const string answerStr)
+void DrawStartGame(const int life, const int score, const int time, const string questionStr, const string answerStr)
 {
     system("cls");
     gotoxy(2, 1);
-    cout << "□□□□□□□□□□□□□□□□□□□□";
+    cout << "□□□□□□□□□□□□□□□□□□□□□";
     gotoxy(4, 3);
     cout << "목숨 : " << life;
     gotoxy(4, 4);
     cout << "점수 : " << score;
+    gotoxy(4, 5);
+    cout << "경과시간 : " << time;
     gotoxy(4, 8);
     cout << "Q : " << questionStr;
     gotoxy(4, 10);
@@ -75,21 +76,21 @@ void DrawStartGame(const int life, const int score, const string questionStr, co
     gotoxy(4, 14);
     cout << "SPACE를 누르세요!";
     gotoxy(2, 18);
-    cout << "□□□□□□□□□□□□□□□□□□□□";
+    cout << "□□□□□□□□□□□□□□□□□□□□□";
 }
 
 void DrawGameOver(const int score)
 {
     system("cls");
+    gotoxy(8, 7);
+    cout << "-------------------";
     gotoxy(8, 8);
-    cout << "-------------------";
-    gotoxy(8, 9);
     cout << "| G A M E O V E R |";
-    gotoxy(8, 10);
+    gotoxy(8, 9);
     cout << "-------------------";
-    gotoxy(10, 12);
+    gotoxy(10, 11);
     cout << " 점수 : " << score;
-    gotoxy(8, 15);
+    gotoxy(8, 14);
     if (score <= 50)
     {
         
@@ -254,25 +255,34 @@ void StartGame()
 {
     int life = LIFE;
     int score = 0;
-
-    clock_t startTime, endTime;
-    startTime = clock();
+    int time = 0;
 
     vector<int> questionVec;
     string questionStr = "";
     vector<int> answerVec;
     string answerStr = "";
+    clock_t start = clock();
 
     int firstInput = 0;
     int secondInput = 0;
+
     while (true)
     {
         int level = (score / 30) + 1;
         SetQuestion(questionVec, level);
         VectorToString(questionVec, questionStr);
+
         while (true)
         {
-            DrawStartGame(life, score, questionStr, answerStr);
+            DrawStartGame(life, score, time, questionStr, answerStr);
+
+            //  for (;;) {
+            //      clock_t end = clock();
+            //      int time = int(end - start) / CLOCKS_PER_SEC;
+            //      gotoxy(4, 5);
+            //      cout << "경과시간 : " << time;
+            //  
+            //  }
 
             if (life == 0)
             {
@@ -321,7 +331,7 @@ void StartGame()
                 answerVec.clear();
                 answerStr = "";
                 break;
-            }
+            }    
         }
     }
 }

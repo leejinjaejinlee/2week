@@ -1,3 +1,2 @@
 ﻿  Source.cpp
-C:\Users\Administrator\Desktop\2week\게임만들기\Source.cpp(258,24): warning C4101: 'endTime': unreferenced local variable
   ConsoleApplication1.vcxproj -> C:\Users\Administrator\Desktop\2week\게임만들기\x64\Debug\Game.exe
